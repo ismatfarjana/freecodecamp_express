@@ -1,10 +1,12 @@
 let express = require("express");
 require("dotenv").config();
+const bodyParser = reruire("body-parser");
 let app = express();
 const IP = require("ip");
 const ipAddress = IP.address();
 
 console.log("Hello World");
+bodyParser.urlencoded({ extended: false });
 
 // middleware
 const middleware = function (req, res, next) {
