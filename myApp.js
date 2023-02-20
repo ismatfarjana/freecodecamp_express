@@ -1,4 +1,6 @@
 var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 let express = require("express");
 require("dotenv").config();
 
@@ -7,8 +9,6 @@ const IP = require("ip");
 const ipAddress = IP.address();
 
 console.log("Hello World");
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // middleware
 const middleware = function (req, res, next) {
