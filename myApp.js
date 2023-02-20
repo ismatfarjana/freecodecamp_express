@@ -6,7 +6,8 @@ const IP = require("ip");
 const ipAddress = IP.address();
 
 console.log("Hello World");
-bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // middleware
 const middleware = function (req, res, next) {
