@@ -1,10 +1,14 @@
 var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
 let express = require("express");
 require("dotenv").config();
 
 let app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
 const IP = require("ip");
 const ipAddress = IP.address();
 
