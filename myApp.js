@@ -42,4 +42,11 @@ app.get("/:word/echo", middleware, (req, res) => {
   res.send({ echo: word });
 });
 
+app.get("/name", middleware, (req, res) => {
+  const firstName = req.query.first;
+  const lastName = req.query.last;
+  res.json({
+    name: `${firstName} ${lastName}`,
+  });
+});
 module.exports = app;
