@@ -1,6 +1,7 @@
+var bodyParser = reruire("body-parser");
 let express = require("express");
 require("dotenv").config();
-const bodyParser = reruire("body-parser");
+
 let app = express();
 const IP = require("ip");
 const ipAddress = IP.address();
