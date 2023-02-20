@@ -8,7 +8,6 @@ let app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
 const IP = require("ip");
 const ipAddress = IP.address();
 
@@ -53,6 +52,14 @@ app.get("/:word/echo", middleware, (req, res) => {
 app.get("/name", middleware, (req, res) => {
   const firstName = req.query.first;
   const lastName = req.query.last;
+  res.json({
+    name: `${firstName} ${lastName}`,
+  });
+});
+
+app.post("/name", middleware, (req, res) => {
+  const firstName = req.body.first;
+  const lastName = req.body.last;
   res.json({
     name: `${firstName} ${lastName}`,
   });
