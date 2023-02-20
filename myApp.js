@@ -11,6 +11,7 @@ const middleware = function (req, res, next) {
   const method = req.method;
   const path = req.path;
   const ip = ipAddress;
+  req.time = new Date().toString();
   const string = `${method} ${path} - ${ip}`;
   console.log(string);
   next();
@@ -30,6 +31,10 @@ app.get("/json", middleware, (req, res) => {
   } else {
     res.json({ message: "Hello json" });
   }
+});
+
+app.get("/now", middleware, (req, res) => {
+  res.send({ time: req.time });
 });
 
 module.exports = app;
