@@ -37,4 +37,9 @@ app.get("/now", middleware, (req, res) => {
   res.send({ time: req.time });
 });
 
+app.get("/:word/echo", middleware, (req, res) => {
+  const word = req.params.word;
+  res.send({ echo: word });
+});
+
 module.exports = app;
