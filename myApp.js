@@ -1,4 +1,4 @@
-var bodyParser = reruire("body-parser");
+var bodyParser = require("body-parser");
 let express = require("express");
 require("dotenv").config();
 
